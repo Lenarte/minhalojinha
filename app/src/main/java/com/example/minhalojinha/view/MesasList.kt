@@ -39,7 +39,7 @@ import com.example.minhalojinha.rota
 fun MesasList (navController: NavController){
 
     var bottomState by remember {
-        mutableStateOf("tables")
+        mutableStateOf("mesa")
     }
 
     Scaffold(
@@ -88,21 +88,21 @@ fun MesasList (navController: NavController){
         bottomBar = {
             NavigationBar(containerColor = Color(0xFF626262)) {
                 NavigationBarItem(
-                    selected = bottomState == "chair",
+                    selected = bottomState == "cadeira",
                     onClick = {
                         navController.navigate(rota.cadeiras)
                     },
                     icon = {
                         Icon(
                             imageVector = Icons.Default.Home,
-                            contentDescription = "chairs",
+                            contentDescription = "cadeiras",
                             modifier = Modifier.size(24.dp)
                         )
                     },
-                    label = { Text(text = "chairs") }
+                    label = { Text(text = "cadeiras") }
                 )
                 NavigationBarItem(
-                    selected = bottomState == "tables",
+                    selected = bottomState == "mesas",
                     onClick = {
                         navController.navigate(rota.mesa)
                     },
@@ -113,7 +113,7 @@ fun MesasList (navController: NavController){
                             modifier = Modifier.size(24.dp)
                         )
                     },
-                    label = { Text(text = "tables") }
+                    label = { Text(text = "mesas") }
                 )
                 NavigationBarItem(
                     selected = bottomState == "sofa",
@@ -138,7 +138,7 @@ fun MesasList (navController: NavController){
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxSize()
         ) {
-            Text(text = "Tables List")
+            Text(text = "mesas List")
         }
     }
 }

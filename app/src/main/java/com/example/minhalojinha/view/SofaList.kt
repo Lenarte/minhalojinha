@@ -1,5 +1,8 @@
 package com.example.minhalojinha.view
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -22,12 +25,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.minhalojinha.rota
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -83,40 +88,37 @@ fun SofaList (navController: NavController){
         bottomBar = {
             NavigationBar(containerColor = Color(0xFF626262)) {
                 NavigationBarItem(
-                    selected = bottomState == "chair",
+                    selected = bottomState == "cadeira",
                     onClick = {
-                        bottomState = "chair"
-
+                        navController.navigate(rota.cadeiras)
                     },
                     icon = {
                         Icon(
                             imageVector = Icons.Default.Home,
-                            contentDescription = "chairs",
+                            contentDescription = "cadeiras",
                             modifier = Modifier.size(24.dp)
                         )
                     },
-                    label = { Text(text = "chairs") }
+                    label = { Text(text = "cadeiras") }
                 )
                 NavigationBarItem(
-                    selected = bottomState == "tables",
+                    selected = bottomState == "mesas",
                     onClick = {
-                        bottomState = "tables"
-
+                        navController.navigate(rota.mesa)
                     },
                     icon = {
                         Icon(
                             imageVector = Icons.Default.Favorite,
-                            contentDescription = "tables",
+                            contentDescription = "mesas",
                             modifier = Modifier.size(24.dp)
                         )
                     },
-                    label = { Text(text = "tables") }
+                    label = { Text(text = "mesas") }
                 )
                 NavigationBarItem(
                     selected = bottomState == "sofa",
                     onClick = {
-                        bottomState = "sofa"
-
+                        navController.navigate(rota.sofa)
                     },
                     icon = {
                         Icon(
@@ -130,7 +132,13 @@ fun SofaList (navController: NavController){
             }
         }
     ) { innerPadding ->
-
-        Text(text = "Olá, esta é a tela principal!", modifier = Modifier.padding(innerPadding))
+        Text(text = "", modifier = Modifier.padding(innerPadding))
+        Column (
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Text(text = "sofa List")
+        }
     }
 }
