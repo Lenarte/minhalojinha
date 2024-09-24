@@ -61,7 +61,7 @@ fun ChairsList(navController: NavController) {
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /* Ação ao clicar no ícone de voltar */ }) {
+                    IconButton(onClick = {  }) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "Voltar",
@@ -70,8 +70,8 @@ fun ChairsList(navController: NavController) {
                         )
                     }
                 },
-                actions = { // Coloque os outros ícones aqui
-                    IconButton(onClick = { /* Ação ao clicar no ícone de carrinho */ }) {
+                actions = {
+                    IconButton(onClick = {  }) {
                         Icon(
                             imageVector = Icons.Default.ShoppingCart,
                             contentDescription = "Carrinho",
@@ -80,7 +80,7 @@ fun ChairsList(navController: NavController) {
                         )
                     }
 
-                    IconButton(onClick = { /* Ação ao clicar no ícone de menu */ }) {
+                    IconButton(onClick = {  }) {
                         Icon(
                             imageVector = Icons.Default.Menu,
                             contentDescription = "Menu",
@@ -98,7 +98,7 @@ fun ChairsList(navController: NavController) {
                     selected = bottomState == "chair",
                     onClick = {
                         bottomState = "chair"
-                        // Ação ao clicar no item "chair"
+
                     },
                     icon = {
                         Icon(
@@ -113,7 +113,7 @@ fun ChairsList(navController: NavController) {
                     selected = bottomState == "tables",
                     onClick = {
                         bottomState = "tables"
-                        // Ação ao clicar no item "tables"
+
                     },
                     icon = {
                         Icon(
@@ -128,7 +128,7 @@ fun ChairsList(navController: NavController) {
                     selected = bottomState == "sofa",
                     onClick = {
                         bottomState = "sofa"
-                        // Ação ao clicar no item "sofa"
+
                     },
                     icon = {
                         Icon(
@@ -142,7 +142,6 @@ fun ChairsList(navController: NavController) {
             }
         }
     ) { innerPadding ->
-        // Conteúdo da tela, use innerPadding para evitar sobreposição
         Text(text = "Olá, esta é a tela principal!", modifier = Modifier.padding(innerPadding))
     }
 }
