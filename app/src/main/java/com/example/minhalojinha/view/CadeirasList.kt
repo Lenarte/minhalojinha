@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.sp
 
 
 import androidx.navigation.NavController
-
+import com.example.minhalojinha.Graph
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -97,8 +97,7 @@ fun ChairsList(navController: NavController) {
                 NavigationBarItem(
                     selected = bottomState == "chair",
                     onClick = {
-                        bottomState = "chair"
-
+                        navController.navigate(Graph.CHAIRS)
                     },
                     icon = {
                         Icon(
@@ -112,8 +111,7 @@ fun ChairsList(navController: NavController) {
                 NavigationBarItem(
                     selected = bottomState == "tables",
                     onClick = {
-                        bottomState = "tables"
-
+                        navController.navigate(Graph.TABLES)
                     },
                     icon = {
                         Icon(
@@ -127,8 +125,7 @@ fun ChairsList(navController: NavController) {
                 NavigationBarItem(
                     selected = bottomState == "sofa",
                     onClick = {
-                        bottomState = "sofa"
-
+                        navController.navigate(Graph.SOFA)
                     },
                     icon = {
                         Icon(
@@ -142,7 +139,7 @@ fun ChairsList(navController: NavController) {
             }
         }
     ) { innerPadding ->
-        Text(text = "Olá, esta é a tela principal!", modifier = Modifier.padding(innerPadding))
+        Text(text = "aa", modifier = Modifier.padding(innerPadding))
     }
 }
 
