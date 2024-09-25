@@ -150,32 +150,32 @@ fun CadeirasList(navController: NavController) {
             columns = GridCells.Fixed(2),
             verticalArrangement = Arrangement.Center,
             horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.padding(innerPadding) // Aqui aplicamos o padding
+            modifier = Modifier.padding(innerPadding)
         ) {
             var cadeirasList: MutableList<Cadeira> = mutableListOf(
                 Cadeira(
                     imagem = R.drawable.cadeira1,
-                    titulo = "cadeira retro",
-                    descricao = "mdf",
-                    preco = "R$ 28"
+                    titulo = "cadeira moderna",
+                    descricao = "feita em madeira mdf",
+                    preco = "R$ 250 "
                 ),
                 Cadeira(
-                    imagem = R.drawable.cadeira1,
+                    imagem = R.drawable.image3,
                     titulo = "cadeira retro",
-                    descricao = "mdf",
-                    preco = "R$ 28"
+                    descricao = "madeira de lei",
+                    preco = "R$ 180"
                 ),
                 Cadeira(
-                    imagem = R.drawable.cadeira1,
-                    titulo = "cadeira retro",
-                    descricao = "mdf",
-                    preco = "R$ 28"
+                    imagem = R.drawable.image4,
+                    titulo = "cadeira gamer",
+                    descricao = "plastico de alta resistencia",
+                    preco = "R$ 700"
                 ),
                 Cadeira(
-                    imagem = R.drawable.cadeira1,
-                    titulo = "cadeira retro",
-                    descricao = "mdf",
-                    preco = "R$ 28"
+                    imagem = R.drawable.image5,
+                    titulo = "cadeira de bar",
+                    descricao = "cadeira de plastico varias cores",
+                    preco = "R$ 70"
                 ),
                 Cadeira(
                     imagem = R.drawable.cadeira1,
