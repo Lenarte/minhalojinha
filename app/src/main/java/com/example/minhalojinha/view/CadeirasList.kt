@@ -105,36 +105,6 @@ fun CadeirasList(navController: NavController) {
                             },
                             label = { Text(text = "Cadeiras") }
                         )
-                        NavigationBarItem(
-                            selected = bottomState == "mesas",
-                            onClick = {
-                                bottomState = "mesas"
-                                navController.navigate(rota.mesa)
-                            },
-                            icon = {
-                                Icon(
-                                    imageVector = Icons.Default.Favorite,
-                                    contentDescription = "Mesas",
-                                    modifier = Modifier.size(24.dp)
-                                )
-                            },
-                            label = { Text(text = "Mesas") }
-                        )
-                        NavigationBarItem(
-                            selected = bottomState == "sofa",
-                            onClick = {
-                                bottomState = "sofa"
-                                navController.navigate(rota.sofa)
-                            },
-                            icon = {
-                                Icon(
-                                    imageVector = Icons.Default.Favorite,
-                                    contentDescription = "Sofá",
-                                    modifier = Modifier.size(24.dp)
-                                )
-                            },
-                            label = { Text(text = "Sofá") }
-                        )
                     }
                 }
             ) { innerPadding ->
@@ -258,7 +228,15 @@ fun DrawerContent(navController: NavController, drawerState: DrawerState) {
                 coroutineScope.launch { drawerState.close() }
             }
         )
-
+        DrawerItem(
+            label = "Itens à Venda",
+            icon = Icons.Default.ShoppingCart,
+            isSelected = currentRoute == rota.itemVenda,
+            onClick = {
+                navController.navigate(rota.itemVenda)
+                coroutineScope.launch { drawerState.close() }
+            }
+        )
         Spacer(modifier = Modifier.weight(1f)) // Para empurrar o Login para o final da lista
 
         // Adiciona opção de Login no final do Drawer

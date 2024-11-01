@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.minhalojinha.ui.theme.MinhaLojinhaTheme
 import com.example.minhalojinha.view.CadeirasList
+import com.example.minhalojinha.view.ItemVendaScreen
 import com.example.minhalojinha.view.SofaList
 import com.example.minhalojinha.view.MesasList
 import com.example.minhalojinha.view.LoginScreen
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                 NavHost(
                     navController = navController,
                     route = rota.rota,
-                    startDestination = rota.login // Define a tela de login como a inicial
+                    startDestination = rota.cadeiras // Define a tela de login como a inicial
                 ) {
                     composable(route = rota.login) {
                         LoginScreen(navController = navController)
@@ -42,6 +43,9 @@ class MainActivity : ComponentActivity() {
                     composable(route = rota.sofa) {
                         SofaList(navController = navController)
                     }
+                    composable(route = rota.itemVenda) {
+                        ItemVendaScreen(navController = navController)
+                    }
                 }
             }
         }
@@ -55,4 +59,5 @@ object rota {
     const val sofa = "sofa_rota"
     const val login = "login_rota" // Rota da tela de login
     const val registro = "registro_rota" // Rota da tela de registro
+    const val itemVenda = "itemVenda" // Nova rota para ItemVendaScreen
 }
